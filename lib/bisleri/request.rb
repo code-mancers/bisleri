@@ -4,7 +4,7 @@ module Bisleri
     attr_accessor :http_method, :resource_uri, :http_version, :headers
 
     def initialize
-      headers = {}
+      @headers = {}
     end
   end
 

@@ -9,13 +9,13 @@ describe Bisleri::RequestBuilder do
         @request_builder.set_request_line
       end
       it "should set http method" do
-        @request_builder.request.http_method.should == "GET"
+        expect(@request_builder.request.http_method).to eq("GET")
       end
       it "should set resource uri" do
-        @request_builder.request.resource_uri.should == "/index.html"
+        expect(@request_builder.request.resource_uri).to eq("/index.html")
       end
       it "should set http version" do
-        @request_builder.request.http_version.should == "HTTP/1.1"
+        expect(@request_builder.request.http_version).to eq("HTTP/1.1")
       end
     end
     context "when request line is invalid" do
