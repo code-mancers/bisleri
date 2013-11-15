@@ -25,3 +25,4 @@ describe Bisleri::ResponseStatus do
     end
   end
 end
+

@@ -42,3 +42,4 @@ RESPONSE_STATUSES = {
   "505" => "HTTP Version not supported"
 }
 end
+
