@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "bisleri/http_server"
+
+Bisleri::HttpServer.start
