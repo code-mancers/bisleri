@@ -1,5 +1,5 @@
 require "eventmachine"
-#require 'bisleri/parser'
+require 'bisleri/parser'
 
 module Bisleri
   class HttpServer < EventMachine::Connection
@@ -8,7 +8,7 @@ module Bisleri
     end
 
     def receive_data data
-      #request = Parser.parse_request(data) #TODO: Implement parser
+      request = Parser.instance.parse_request(data)
       send_data "Hello World" #TODO: send an actual response
     end
 
