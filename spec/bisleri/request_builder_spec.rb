@@ -26,3 +26,4 @@ describe Bisleri::RequestBuilder do
     end
   end
 end
+

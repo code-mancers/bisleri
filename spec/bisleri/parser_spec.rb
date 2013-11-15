@@ -16,3 +16,4 @@ describe Bisleri::Parser do
     end
   end
 end
+
