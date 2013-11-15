@@ -1,5 +1,9 @@
 # Bisleri
 
+[![Build Status](https://travis-ci.org/code-mancers/bisleri.png?branch=master)](https://travis-ci.org/code-mancers/bisleri)
+[![Code Climate](https://codeclimate.com/github/code-mancers/bisleri.png)](https://codeclimate.com/github/code-mancers/bisleri)
+
+
 A simple HTTP 1.1 server built using EventMachine.
 
 ## Installation
