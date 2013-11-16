@@ -6,7 +6,7 @@ require 'bisleri/version'
 Gem::Specification.new do |spec|
   spec.name          = "bisleri"
   spec.version       = Bisleri::VERSION
-  spec.authors       = ["Emil Soman, Kashyap Kondamudi"]
+  spec.authors       = ["Emil Soman", "Kashyap Kondamudi"]
   spec.email         = ["emil.soman@gmail.com"]
   spec.description   = %q{Bisleri is a simple HTTP 1.1 server which uses EventMachine}
   spec.summary       = %q{A simple HTTP 1.1 server using EventMachine}
