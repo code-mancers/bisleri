@@ -21,7 +21,7 @@ describe Bisleri::RequestBuilder do
     context "when request line is invalid" do
       it "should raise InvalidRequestLine exception" do
         @request_builder = Bisleri::RequestBuilder.new("abcdefg")
-        expect{ @request_builder.set_request_line }.to raise_error("InvalidRequestLine")
+        expect{ @request_builder.set_request_line }.to raise_error(Bisleri::Errors::InvalidRequestLine)
       end
     end
   end
