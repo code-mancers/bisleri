@@ -1,7 +1,9 @@
-require 'bisleri/request'
+require "bisleri/request"
+require "bisleri/errors"
+
 module Bisleri
 
-  class Bisleri::RequestBuilder
+  class RequestBuilder
     attr_reader :request
 
     def initialize(raw_data)
@@ -18,7 +20,7 @@ module Bisleri
       @request.resource_uri = request_line_array[request_line_template.index("RESOURCE_URI")]
       @request.http_version = request_line_array[request_line_template.index("HTTP_VERSION")]
     rescue
-      raise "InvalidRequestLine" #TODO: Write a proper exception class
+      raise Errors::InvalidRequestLine
     end
   end
 end
