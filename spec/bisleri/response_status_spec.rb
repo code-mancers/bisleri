@@ -6,17 +6,22 @@ describe Bisleri::ResponseStatus do
     let(:response_status){ Bisleri::ResponseStatus.new(@status) }
     it "should set the status and reason phrase for Bad Request" do
       @status = 400
-      expect(response_status.status).to eq("400")
+      expect(response_status.status_code).to eq("400")
       expect(response_status.reason_phrase).to eq("Bad Request")
     end
     it "should set the status and reason phrase for Success" do
       @status = 200
-      expect(response_status.status).to eq("200")
+      expect(response_status.status_code).to eq("200")
       expect(response_status.reason_phrase).to eq("OK")
     end
     it "should set the status and reason phrase for Unauthorized" do
       @status = 401
-      expect(response_status.status).to eq("401")
+      expect(response_status.status_code).to eq("401")
+      expect(response_status.reason_phrase).to eq("Unauthorized")
+    end
+    it "should work when status is a string" do
+      @status = "401"
+      expect(response_status.status_code).to eq("401")
       expect(response_status.reason_phrase).to eq("Unauthorized")
     end
     it "should raise InvalidResponseStatus when status is invalid" do
