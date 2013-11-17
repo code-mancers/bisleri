@@ -2,27 +2,17 @@ require "spec_helper"
 require "bisleri/request_builder"
 
 describe Bisleri::RequestBuilder do
+  let(:request_builder) { Bisleri::RequestBuilder.new }
   describe "#set_request_line" do
-    context "when request line is valid" do
-      before(:each) do
-        @request_builder = Bisleri::RequestBuilder.new("GET /index.html HTTP/1.1\r\nxx")
-        @request_builder.set_request_line
-      end
-      it "should set http method" do
-        expect(@request_builder.request.http_method).to eq("GET")
-      end
-      it "should set resource uri" do
-        expect(@request_builder.request.resource_uri).to eq("/index.html")
-      end
-      it "should set http version" do
-        expect(@request_builder.request.http_version).to eq("HTTP/1.1")
-      end
+    it "should set the request line" do
+      request_builder.set_request_line("request_line")
+      expect(request_builder.request.request_line).to eql("request_line")
     end
-    context "when request line is invalid" do
-      it "should raise InvalidRequestLine exception" do
-        @request_builder = Bisleri::RequestBuilder.new("abcdefg")
-        expect{ @request_builder.set_request_line }.to raise_error(Bisleri::Errors::InvalidRequestLine)
-      end
+  end
+  describe "#set_headers" do
+    it "should set the request headers" do
+      request_builder.set_headers({key: "value"})
+      expect(request_builder.request.headers).to eql({key: "value"})
     end
   end
 end
