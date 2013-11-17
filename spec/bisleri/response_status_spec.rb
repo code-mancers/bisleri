@@ -21,7 +21,7 @@ describe Bisleri::ResponseStatus do
     end
     it "should raise InvalidResponseStatus when status is invalid" do
       @status = 499
-      expect{ response_status }.to raise_error("InvalidResponseStatus")
+      expect{ response_status }.to raise_error(Bisleri::Errors::InvalidResponseStatus)
     end
   end
 end

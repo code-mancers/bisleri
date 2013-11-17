@@ -1,4 +1,5 @@
 require "bisleri/response_statuses"
+require "bisleri/errors"
 
 module Bisleri
   class ResponseStatus
@@ -6,8 +7,7 @@ module Bisleri
     def initialize(status)
       @status = status.to_s
       @reason_phrase = RESPONSE_STATUSES[@status]
-      #TODO: Use a proper Exception class
-      raise "InvalidResponseStatus" if @reason_phrase.nil?
+      raise Errors::InvalidResponseStatus if @reason_phrase.nil?
     end
   end
 end
