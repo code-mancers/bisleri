@@ -1,7 +1,7 @@
 module Bisleri
 
   class Request
-    attr_accessor :http_method, :resource_uri, :http_version, :headers
+    attr_accessor :request_line, :headers, :body
 
     def initialize
       @headers = {}
